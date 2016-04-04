@@ -1,0 +1,35 @@
+# calculator_messages.yml
+
+en:
+  welcome: "Welcome to Calculator! Enter your name:"
+  valid_name: "Make sure to use a valid name."
+  greeting: "Hi "
+  first_number: "What's the first number?"
+  second_number: "What's the second number?"
+  number_error: "Hmm... that doesn't look like a valid number"
+  calculating_msg: " the two numers..."
+  result: "The result is "
+  again_msg: "Do you want to perform another calculation? (Y to calculate again)"
+  goodbye: "Thank you for using the calculator. Goodbye!"
+  operator_question: "What operation would you like to perform?"
+  adding: Adding
+  subtract: Subtracting
+  multiply: Multiplying
+  divide: Dividing
+
+nl:
+  welcome: "Welkom bij Rekenmachine! Voer uw naam in:"
+  valid_name: "Gebruik a.u.b. een geldige naam."
+  greeting: "Hallo "
+  first_number: "Wat is het eerste getal?"
+  second_number: "Wat is het tweede getal?"
+  number_error: "Hmm... dat is een ongeldige invoer"
+  calculating_msg: " van de twee getallen..."
+  result: "De uitkomst is "
+  again_msg: "Wilt u nog een berekening uitvoeren? (Y op nogmaals te rekenen)"
+  goodbye: "Bedankt voor het gebruik van Rekenmachine. Tot ziens!"
+  operator_question: "Welke bewerking wilt u uitvoeren?"
+  adding: Optellen
+  subtract: Aftrekken
+  multiply: Vermenigvuldigen
+  divide: Delen
