@@ -1,0 +1,161 @@
+Local Variables
+
+1.
+
+The last line outputs 2 because within the loop the value of the variable `str` is changed to '2'.
+
+This code illustrates the fact that you can call a variable outside of a block and change it's value.
+
+2.
+
+The code raises an exception because the variable `str` is created within the block, therefor it is not recognised when you call it on line 6. For this to function  correct, you would have to define the local variable outside the loop first.
+
+A correct code would be:
+
+`str = ''
+  loop do
+    str = 2
+    break
+  end
+
+  puts str`
+
+3.
+
+You can't say with certainty if the code will run because you can't know for sure if the variable `str` is defined somewhere outside of this loop.
+
+4.
+
+The code raises an exception because it tries to call the local variable `str` within the method. This isn't possible because when a method is defined, a new scope is created. The local variable `str` lies outside of this scope.
+
+5.
+
+This doesn't raise an exception because the first variable `str` (on line 1) is defined in the main scope and it is also called in the main scope on line 8. Therefore, it ignored the local variable defined in the scope of the method.
+The calling of the method on line 7 doesn't do anything because, except for the definition of a variable, nothing happens inside the method. (if line 7 said `puts a_method` it would have printed 'world' on the screen.)
+
+The difference between the code in Q4 and this question is that in Q4 it tries to call a method that lies outside of the method's scope. Also, in this question's code, the `puts` on line 8 calls the local variable that is in the same scope as the `puts`.
+
+There is no relationship between the two `str` local variables, the are two different local variables as the are defined in different scopes.
+
+6.
+
+On line 1 local variable `a` is defined with the value `"hello"`.
+On line 2 local variable `b` is defined with the valua `"hello"` aswell (`b = a` meaning `b` will get the same the value as `a`)
+on line 3 the value of local variable `a` is changed to `"hi"` and on line 4 `" world"` is added to the string (value) of `a`.
+
+Since b is defined after the first definition of `a` and before the changes on `a` occured, `b` will still be `"hello"`
+
+7.
+
+There are 4 variable in the code. ( `a`, `b`, `c`, `d`)
+
+On line 1, 2, 4 and 5 local variables are defined, on line 6 and 7 only the values are changed on 2 of the local variables.
+
+There are 6 objects in the code. 
+
+All the values are objects, and since there are 6 value-definitions in the code, there are 6 object in the code.
+
+
+Mutating Method Arguments
+
+1. 
+
+The last line prints `"hello"` because the used method `+` is not destructive and therefore the value of the local variable `greeting` is not changed permanently. (if the last line would have been `puts change(greeting)` it would have printed `"hello world"`)
+
+Ths code demostrates that the used method `+` is not a destructive method. It doesn't change the variable's value permanently. (`+` changes the value of the variable, but only when called upon, not permanently)
+
+2.
+
+In the defined method `change` the string `" world" is added to the variables value. When the method is called on the local variable `greeting` the value is therefore changed from `"hello"` to `"hello world"`
+
+This demonstrates that the defined method is a destructive method invocation. (`<<` changes the value of the variable permanently)
+
+3.
+
+The extra line assigns a value `"hi"` to new local variable `param'. after that the `<< " world" is adding `" world" to that variable.
+
+The `puts greeting' on line 9 prints `"hello"`, since local variable `greeting` was not affected by the method.
+
+4.
+
+The first line of code defines a new variable `param' The next lines of code in the method are applied on the new variable `param', therefore they have no effect on local variable 'greeting'
+
+(if line 11 would've said `puts change(greeting) it would've printed `"hi world"`)
+
+Working with Collections
+
+1.
+
+`Array#map` itterates over an array and returns a new array based on the block's return value. Each element from the original array is tranformed seperately.
+
+e.g.
+
+`arr = [1, 2, ,3, 4, 5, 6, 7, 8, 9, 10]
+
+arr_2 = arr.map { |n| n + 1 }`
+
+  will return a  new array `arr_2` with these values: `[2, 3, 4, 5, 6, 7, 8, 9, 10, 11]`
+
+2.
+
+  `Array#select` itterates over an array and returns a new array based on the block's return value. If the return value is `true` the element is selected.
+
+  e.g.
+
+`arr = [1, 2, ,3, 4, 5, 6, 7, 8, 9, 10]
+
+arr_2 = arr.select { |n| n > 4 }`
+
+  will return a  new array `arr_2` with these values: `[5, 6, 7, 8, 9, 10, 11]`
+
+3.
+
+The both return a new array bij taking the original `n` and add 1. (both return `[2, 3' 4]`)
+
+`n + 1` adds 1 to the original value `n` it calculates the new variable
+`n += 1` actually says n = n + 1 it reassigns the new variable.
+
+I would prefer the second one because it is less likely to be ignored in a block.
+
+4.
+
+Bacause the `.map' method is used, it itterated over the array and checked every element for being bigger than 2. And returned and array with the answers. (`[false, false, true]`)
+
+When `.select` had been used, the retruned array would have been : `[3]`
+
+5.
+
+'arr = [nil, nil, nil]`
+
+The return value of the block is `nil`. Because `.map` evauates each element seperately, an array of `nils` is returned.
+
+6.
+
+`arr' = [1, 2, 3]`
+
+.select wil evaluate if the return value from a block of code is thrue or false. Based on that returnvalue, an element is selected or not selected.
+
+Since n + 2 in this case evaluates to `true`, all values are selected.
+
+7.
+
+`arr = []`
+The returnvalue of the block is `nil`. `nil` evauates to `false`, therefore, 
+an empty array is returned.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
